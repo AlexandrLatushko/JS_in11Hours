@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const objectA = {
+            a: 10,
+            b: true
+        };
+
+        const copyOfA = objectA;
+
+        copyOfA.c = 'abc';
+
+        console.log(objectA);
+
+        const copyOfB = copyOfA;
+        copyOfB.d = false;
+
+        console.log(objectA);
+        copyOfB.b = false;
+        console.log(objectA);
+
+        const myCity = {
+            city: 'Grodno',
+            info: {
+                isPopular: true,
+                country:'Belarus'
+            },
+            numberOfPeople: 200000
+        }
+        console.log(myCity.info['country']); // комбтнация точечной и скобочной записи
+
+// ___________________________________________________________
+    const perosn = {
+        name: 'Bob',
+        age: 25
+    }
+    const person2 = Object.assign({}, perosn);// Object.assign({}, используем для избужания мутиции в js 
+    person2.age = 28;
+    perosn.age = 69;
+    perosn.cuantry = 'Belarus';
+
+    console.log(perosn);
+    console.log(person2);
+
+
+    
+    console.log(perosn.age);
+    console.log(person2.age);
+    
+    console.log(person2.age);
+    console.log(perosn.age);
+
+
+
+
+
+    const perosnen = {
+        name:'Alex',
+        age: 30
+    }
+    const personen2 = perosnen
+    personen2.age = 25
+    personen2.isAdult = true
+
+    console.log(perosnen.age);
+    console.log(perosnen.age);// выведет 25, тк произошла мутация 
+    console.log(personen2.isAdult);
+  
+
+
+
+    </script>
+</body>
+</html>

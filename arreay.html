@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const myArreay = [1, false, 6]
+        // console.log(myArreay);
+
+        // console.log(myArreay[0]);
+        // console.log(myArreay[2]);
+        // console.log(myArreay.length);
+
+        // myArreay.push(true); // добавляем новый элемент в конец массива с помощью метожа push 
+        // console.log(myArreay);
+        // console.log(myArreay.length);
+
+        // myArreay.pop();// удаляет посделний элемент в массиве 
+        // console.log(myArreay);// выведет уже без последнего элемента, тк его удалил метод .pop
+
+        // // так же можем присвоить вызов метода переменной и этот метод вернет удаленное значение 
+
+        // const removedElement = myArreay.pop();//удалит последний элемент и вернет его дначение 
+        // console.log(myArreay);
+        // console.log(removedElement);// выведет значение улаленного элемента 
+
+        // myArreay.unshift('abc');//этот метод .unshift дабавляет элемент в начало массива
+        // console.log(myArreay);
+
+        // myArreay.forEach(el => console.log(el * 2 ));//у метода .forEach есть аргумент значением которого является функция 
+        // // и при вызове этого агрумента функция применяется к каждому из элементов массива. Но он не изменяет исходный массив а просто
+        // // переходит по нему и применяется к каждому элементу 
+        // console.log(myArreay);// выведется без изменений массив 
+
+        // const myArreyFE = myArreay.forEach(el => console.log(el * 2 ));// тут мы присвоили этому методу переменную и вызвали уже эту переменную в консоль
+
+        // console.log(myArreyFE);// выведется с учетом действия колбек функции 
+
+
+
+
+
+        // -___________________________-
+
+        // const myArray = [1,2,3];
+        // console.log(myArray);
+
+        // const newArray = myArray.map((el) => {
+        //    return el*3 
+        // });// .map работает по принципу .forEach но map уже возврацает новый массив а результат 
+        // console.log(newArray);
+        // console.log(myArray);
+
+
+
+
+
+
+        // Пример 1: Простая деструктуризация объекта
+            // // const person = { name: 'John', age: 30 };
+            // // const { name, age } = person;
+
+            // console.log(name); // Вывод: John
+            // console.log(age); // Вывод: 30
+
+            // // Пример 2: Переименование переменных
+            // const { name: personName, age: personAge } = person;
+            // console.log(personName); // Вывод: John
+            // console.log(personAge); // Вывод: 30
+
+            // // Пример 3: Значения по умолчанию
+            // const { city = 'Unknown' } = person;
+            // console.log(city); // Вывод: Unknown
+
+            // console.log(person);
+
+              
+            
+            
+            // Функция, которая принимает объект в качестве параметра
+            //     function printPersonInfo({ name, age }) {
+            //         console.log(`Name user: ${name}, Age: ${age}`);
+            //     }
+
+            //     const persons = { name: 'Alice', age: 25 };
+
+            //     // Передаем объект в функцию с деструктуризацией
+            //     printPersonInfo(persons); // Выводит: Name: Alice, Age: 25
+
+
+                //_______________ 
+                // В JavaScript деструктуризация - это способ извлечения значений из объектов или массивов и присваивания их переменным с помощью синтаксиса, похожего на образец (pattern matching). 
+                // Это позволяет удобно извлекать данные из структур данных и использовать их в коде.
+                //деструктуризация объекта 
+                const userPrifile = {
+                    name: 'Ilan',
+                    commentQty: 23,
+                    hasSinedAgreement: false
+                }
+
+                const{name, commentQty} = userPrifile;
+                const{hasSinedAgreement} = userPrifile;
+
+                console.log(name);
+                console.log(hasSinedAgreement);
+
+                // -----------------------------------------
+                // деструктуризация объектов (важен порядок переменных тк каждый элемент массива имеет свой индекс, а привязка именно к нему идет)
+                const fruits = ['Apple', 'Banana'];
+                const [fruitsOne, fruitsTwo] = fruits;
+
+                console.log(fruitsOne);
+                console.log(fruitsTwo);
+
+
+            // деструктуризация в функциях
+
+            const userPro = {
+                name: 'Ilan',
+                commentQty: 23,
+                hasSinedAgreement: false
+            }
+
+            const userInfo = ({name, commentQty}) => {
+                if(!commentQty) {
+                    return `User ${name} has no comments`
+                }
+                return `User ${name} has ${commentQty} comments`
+            }
+
+            console.log(userInfo(userPro));
+
+            // _________________________
+            // условные инструкции 
+            let val = 20;
+            if(val > 5){  //  в скобках выполняется условие (получается true) поэтому выполныет блок кода 
+                val +=20; // это блок кода 
+            }
+            console.log(val);
+
+            // пример if с оператором отрицания 
+
+            const piple = {
+                age: 20
+            }
+
+            if(!piple.name){       // тут мы проверяем устовие в скобка. Тк свойства name у объекта piple нету должно вырнуться undefined но мы 
+                // используем оретатор отрицания !(не) получается (не undefined) а это возырацает true (и блок кода выполнится )
+                console.log('Имя не указано')
+            }
+ 
+            // инструкция if else
+
+            val = 10;
+            if(val < 5){ // это условие ложно поэтому выполняется блок кода после else
+                val +=20;
+            }else{
+                val -=20;
+            }
+            
+            console.log(val);
+
+
+
+
+
+
+
+    
+
+
+    </script>
+</body>
+</html>

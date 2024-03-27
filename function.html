@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // let a = 5;
+        // let b = 3;
+        // function sum(a,b) {
+        //     const c = a + b;
+        //     console.log(c);
+        // }
+        // sum(a,b); // вызов функции 
+
+        // sum(4,4);// выведет 8 
+
+        // console.dir(sum);
+
+
+        // function myfn(a,b) {
+        //     let c 
+        //     a = a + 3 
+        //     c = a + b
+          
+        //     return c
+            
+        // }
+
+        // let result = myfn(8,9);
+        // console.log(result);
+
+        // let result2 = myfn(10,300);
+        // console.log(result2);
+
+// -----------------------------------------------
+
+        const personOne = {
+            name:'Bob',
+            age: 25
+        }
+        
+        function increasePersonAge(person) {
+            const updatedPerson = Object.assign({}, person);
+            updatedPerson.age += 1;
+            return updatedPerson
+        }
+
+        const updatedPersonOne = increasePersonAge(personOne);
+        console.log(personOne.age);
+        console.log(updatedPersonOne.age);
+
+        //__________________________________
+
+        function printMyName() {
+            document.write('Alex')
+        }
+
+        setTimeout(printMyName, 1000); // работает встроенноая функция setTimeout таким образом что в параметрах находится колбек функция и время через которе она выполнится 
+
+
+
+        //______________________________________________
+
+        let a;
+        let b;
+
+        function myFn() {
+            let b;
+            let a;
+            a = true;
+            b = 10;
+            console.log(b);
+            console.log(a);
+        }
+
+        myFn();
+        console.log(a);
+        console.log(b);
+        // ________________________________________________
+
+        // Пример данных
+            const name = 'John';
+            const age = 30;
+            const city = 'New York';
+
+            // Использование шаблонных строк для формирования сообщения
+            const message = `Привет, меня зовут ${name}, мне ${age} лет и я живу в городе ${city}.`;
+
+            // Вывод сообщения в консоль
+            console.log(message);
+
+        // _________________________________________________ 
+        // стрелочне функции
+        
+        const myFNAB = (a, b) => {
+                let c;
+                a = a + 1;
+                c = a + b;
+                console.log(c)
+                // return c   
+            }
+        myFNAB(3,6);  
+        
+        const f =  (a,b) => a + b;
+
+        f(3,9);
+
+
+        setTimeout (()=> {console.log('Nice too miet you')}, 2000);
+
+        // ---------------------------------------------------------
+
+        const newPost = (post, addedAt = Date()) => ({
+            ...post,
+            addedAt
+        })
+
+        const firstPost = {
+            id: 1,
+            autor:'Aliaksandr'
+        }
+
+        console.log(newPost(firstPost));
+
+
+        
+        
+    </script>
+</body>
+</html>
