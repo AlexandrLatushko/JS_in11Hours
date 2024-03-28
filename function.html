@@ -128,8 +128,89 @@
         console.log(newPost(firstPost));
 
 
+        // Использование if  в функциях
+
+        const sumPositiveNumbers = (a,b) => {
+            if(typeof a !== 'number' || typeof b !== 'number'){
+            return 'One ofarguments is not a number'
+        }
+            if(a <= 0 || b <= 0){
+            return 'Numbers are not positive'    
+        }
+            return a + b
+        }
+
+        console.log(sumPositiveNumbers(5,-10));
+
+
+        // Инструкция switch
+
+        let month = 12;
+
+            switch (month) {
+                case 12:  //перебираем разные условия и если подходит, то выполняем действие 
+                    console.log('docember')
+                    break // обязательно делаем брейк в концк каждого условия, тк код пойдем выполняться дальше при выполненом условии
+
+                case 1:
+                    console.log('yanuar')
+                    break
+
+                case 2:
+                    console.log('februar')
+                    break
+
+                default:// если никакое из условий не подойлет, то выполнится вот это действие 
+                    console.log('это не зимний месяц')
+        }
+        
+
+        //тернарный оператор 
+
+        let value = 11;
+
+        value //условие 
+        ? console.log('условие истинно') // если условие правдиво, то тогда выполняется выражение 1 (это выражение)
+        : console.log('условие ложно')// если условие ложно, то выполнияется это выражение (выраженик 2)
         
         
+        //__________________
+
+        console.log(value >= 0 ? value : -value);//выведет 11 тк условие истинно
+
+        value = -5;
+        const res = value >= 0 ? value : -value;
+        console.log(res); // вывелет 5 
+
+
+        // циклы
+
+        for( let i = 0; i < 5; i++){
+            console.log(i)
+        } // выведет 0 1 2 3 4 
+
+        const myArray = ['first', 'second', 'third'];
+
+        for(let i = 0; i < myArray.length; i++){
+            console.log(myArray[i])   // такой способ не желательный для массивов(есть лучше вариант(метод массивов forEach))
+        }//выведет first second third
+
+        
+        myArray.forEach((element, index) =>{
+            console.log(element, index)
+        })  //вывелет название каждого элемента и его индекса
+
+        // метод forEach вызывается с использованием точечной записи. В вызове мы указываем колбек функцию, которая булет выщываться столько раз, кстолько и элементов в массиве
+
+        // цикл while
+
+        let q = 0;
+        while(q < 5){
+            console.log(q)
+            q++
+        }
+
+
     </script>
 </body>
 </html>
